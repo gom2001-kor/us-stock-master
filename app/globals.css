@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-stock-up: #ef4444; /* red-500 */
+  --color-stock-down: #3b82f6; /* blue-500 */
+}
+
+:root {
+  --background: #020617; /* slate-950 */
+  --foreground: #f8fafc; /* slate-50 */
+  --stock-up: #ef4444;
+  --stock-down: #3b82f6;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020617;
+    --foreground: #f8fafc;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  antialiased: true;
+}
+
+/* Custom Utilities for Profit/Loss if Tailwind classes aren't enough */
+.text-up {
+    color: var(--stock-up);
+}
+.text-down {
+    color: var(--stock-down);
 }
